@@ -18,3 +18,17 @@ end
 puts "Seeds finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+
+
+5.times do 
+	Advertisement.create!(
+		title: RandomData.random_sentence,
+		copy: RandomData.random_paragraph,
+		price: RandomData.random_data
+	)
+end
+advertisement = Advertisement.all
+
+
+puts "Seeds finished"
+puts "#{Advertisement.count} advertisement created"
