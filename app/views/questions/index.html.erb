@@ -4,6 +4,7 @@
     <div class="media-body">
       <h4 class="media-heading">
         <%= link_to question.title, question %>
+        <small><%= "#{question.resolved ? 'resolved' : 'pending'}" %></small>
       </h4>
     </div>
   </div>
