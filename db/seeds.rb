@@ -1,5 +1,6 @@
 require "random_data"
 
+# <<<<<<< HEAD #I think this one is okay to keep, because it's an addition for Checkpoint 34. 
 15.times do
 	Topic.create!(
 		name: 				RandomData.random_sentence,
@@ -8,6 +9,8 @@ require "random_data"
 end
 topics =  Topic.all
 
+# =======
+# >>>>>>> assignment-33-RailsMoreCRUD
 50.times do
 	Post.create!(
 		topic: topics.sample,
@@ -24,7 +27,19 @@ posts = Post.all
 	)
 end
 
+10.times do
+	Question.create!(
+		title: RandomData.random_sentence,
+		body: RandomData.random_paragraph
+	)
+end
+questions = Question.all
+
 puts "Seeds finished"
 puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+# <<<<<<< HEAD
+# =======
+puts "#{Question.count} questions created"
+# >>>>>>> assignment-33-RailsMoreCRUD
