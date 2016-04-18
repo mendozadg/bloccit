@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
 
 # #6
   has_secure_password
+
+
 end

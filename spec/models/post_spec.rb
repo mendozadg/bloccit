@@ -4,7 +4,7 @@ require 'random_data'
 RSpec.describe Post, type: :model do
   let(:topic) { Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph) }
   let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
-  let (:post) { topic.posts.create!(title: title, body: body, user: user) }
+  let (:post) { topic.posts.create!(title: "an awesome title", body: "this is the body body body body body body", user: user) }
 
   it { is_expected.to belong_to(:topic) }
   it { is_expected.to belong_to(:user) }
@@ -19,7 +19,7 @@ RSpec.describe Post, type: :model do
 
   describe "attributes" do
     it "has a title, body, and user attribute" do
-      expect(post).to have_attrivutes(title: title, body: body, user: user)
+      expect(post).to have_attributes(title: "an awesome title", body: "this is the body body body body body body", user: user)
     end
   end
 end
