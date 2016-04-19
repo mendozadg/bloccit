@@ -51,9 +51,16 @@ questions = Question.all
 # end
 # sponsored_posts = Sponsored_Post.all
 
-user = User.first
-user.update_attributes!(
-	email: 'dgmendoza17@gmail.com',
+admin = User.create!(
+	name: 'Admin User',
+	email: 'admin@example.com',
+	password: 'helloworld',
+	role: 'admin'
+)
+
+member = User.create!(
+	name: 'Member User',
+	email: 'member@example.com',
 	password: 'helloworld'
 )
 
