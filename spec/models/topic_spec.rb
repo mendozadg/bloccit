@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'random_data'
 
 RSpec.describe Topic, type: :model do
-  let(:topic) {Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph) }
+  let(:topic) { create(:topic) }
 
   it { is_expected.to have_many(:posts) }
   it { is_expected.to have_many(:sponsored_posts) } #Note to self: originally had error b/c I had it as "sponsoredpost" rather than sponsored_post
@@ -18,11 +18,8 @@ RSpec.describe Topic, type: :model do
 
   describe "attributes" do
     it "responds to name" do
-      expect(topic).to respond_to(:name)
-    end
+      expect(topic).to have_attributes(name: topic.name, description: topic.description)
 
-    it "responds to description" do
-      expect(topic).to respond_to(:description)
     end
 
     it "responds to public" do
