@@ -1,0 +1,5 @@
+Login for API checkpoint: Pippin
+Password: password
+Token: ULU60h2vaH0DBRy4S5IjumgnTyL2kgqt+tQCQPWuSvViEVDQRAt5Gfs0j2IAdxfIoLmU2hbp9gjQSHN+CH7nYg==
+
+curl -H "Content-type: application/json" -H "Authorization: Token ULU60h2vaH0DBRy4S5IjumgnTyL2kgqt+tQCQPWuSvViEVDQRAt5Gfs0j2IAdxfIoLmU2hbp9gjQSHN+CH7nYg==" -X POST -d '{"user": {"name":"Pam Poovey",  "email":"pam@archer.com", "password":"helloworld", "role":"admin"}}' http://localhost:3000/api/v1/users/
